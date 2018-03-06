@@ -21,4 +21,4 @@ let canvasContext = canvas.getContext('2d');
  * Call game elements
  */
 
-player();
+player(canvasContext);
