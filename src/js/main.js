@@ -7,7 +7,7 @@
 import player from './elements/player.js';
 
 let canvas = document.createElement('canvas');
-canvas.classList.add('player-canvas');
+canvas.classList.add('canvas');
 
 document.querySelector('.app-container').appendChild(canvas);
 
