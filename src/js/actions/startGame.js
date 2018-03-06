@@ -24,6 +24,14 @@ export default function startGame(image, context) {
 	}
 
 	function render() {
+
+		context.clearRect(
+			0,
+			0,
+			image.width / framesCount,
+			image.height / 2
+		);
+
 		context.drawImage(
 			image,
 			frameIndex * image.width / framesCount,
@@ -33,8 +41,7 @@ export default function startGame(image, context) {
 			0,
 			0,
 			image.width / framesCount,
-			image.height / 2,
-
+			image.height / 2
 		);
 	}
 
