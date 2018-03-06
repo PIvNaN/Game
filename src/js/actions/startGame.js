@@ -1,6 +1,7 @@
 'use strict';
 
 let frameIndex = 0;
+let framesCount = 4;
 
 export default function startGame(image, context) {
 
@@ -16,18 +17,22 @@ export default function startGame(image, context) {
 
 	function update() {
 		frameIndex += 1;
+
+		if (frameIndex >= framesCount) {
+			frameIndex = 0;
+		}
 	}
 
 	function render() {
 		context.drawImage(
 			image,
-			frameIndex * image.width / 4,
+			frameIndex * image.width / framesCount,
 			0,
-			image.width / 4,
+			image.width / framesCount,
 			image.height / 2,
 			0,
 			0,
-			image.width / 4,
+			image.width / framesCount,
 			image.height / 2,
 
 		);
