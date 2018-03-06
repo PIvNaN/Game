@@ -1,3 +1,5 @@
 'use strict';
 
-alert('Test!')
+import player from './elements/player.js';
+
+player();
