@@ -15,6 +15,8 @@ export default function startGame(image, context) {
 
 		update();
 
+		clear();
+
 		render();
 
 		loopTicksCount += 1;
@@ -33,15 +35,16 @@ export default function startGame(image, context) {
 		}
 	}
 
-	function render() {
-
-		// ToDo: Separate in diferent "clear" function
+	function clear() {
 		context.clearRect(
 			0,
 			0,
 			image.width / framesCount,
 			image.height / 2
 		);
+	}
+
+	function render() {
 
 		context.drawImage(
 			image,
