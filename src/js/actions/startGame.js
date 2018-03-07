@@ -6,6 +6,9 @@ let framesCount = 4;
 let loopTicksCount = 0;
 let loopTicksPerFrame = 5;
 
+let x = 0;
+let y = 0;
+
 export default function startGame(image, context) {
 
 	loop();
@@ -37,8 +40,8 @@ export default function startGame(image, context) {
 
 	function clear() {
 		context.clearRect(
-			0,
-			0,
+			x,
+			y,
 			image.width / framesCount,
 			image.height / 2
 		);
@@ -52,8 +55,8 @@ export default function startGame(image, context) {
 			0,
 			image.width / framesCount,
 			image.height / 2,
-			0,
-			0,
+			x,
+			y,
 			image.width / framesCount,
 			image.height / 2
 		);
