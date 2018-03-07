@@ -4,10 +4,13 @@ let frameIndex = 0;
 let framesCount = 4;
 
 let loopTicksCount = 0;
-let loopTicksPerFrame = 5;
+let loopTicksPerFrame = 6;
 
 let x = 0;
 let y = 0;
+
+let lastX = x;
+let lastY = y;
 
 export default function startGame(image, context) {
 
@@ -34,8 +37,10 @@ export default function startGame(image, context) {
 			if (frameIndex >= framesCount) {
 				frameIndex = 0;
 			}	
-
 		}
+
+		x += 1;
+		y += 0;
 	}
 
 	function clear() {
