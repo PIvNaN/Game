@@ -71,17 +71,3 @@ export default function startGame(image, context) {
 	}
 
 }
-		context.drawImage(
-			image,
-			frameIndex * image.width / framesCount,
-			0,
-			image.width / framesCount,
-			image.height / 2,
-			x,
-			y,
-			image.width / framesCount,
-			image.height / 2
-		);
-	}
-
-}
