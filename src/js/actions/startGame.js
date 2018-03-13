@@ -12,7 +12,9 @@ let y = 0;
 let lastX;
 let lastY;
 
-export default function startGame(image, context) {
+let speedX = 10;
+
+export default function startGame(image, context, canvas) {
 
 	loop();
 
@@ -28,6 +30,8 @@ export default function startGame(image, context) {
 		loopTicksCount += 1;
 	}
 
+	console.log(canvas.width);
+
 	function update() {
 		if (loopTicksCount >= loopTicksPerFrame) {
 
@@ -42,8 +46,12 @@ export default function startGame(image, context) {
 		lastX = x;
 		lastY = y;
 
-		x += 3;
-		y += 0;
+		x += speedX;
+
+		if(x >= canvas.width) {
+			speedX = -speedX;
+		}
+		
 	}
 
 	function clear() {
