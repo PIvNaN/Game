@@ -3,10 +3,18 @@
 import loadImage from '../actions/loadImage.js'
 import startGame from '../actions/startGame.js'
 
-export default function player(playerContext, canvas) {
+class Player {
+
+	constructor(context, canvas) {
+		this.loadImage(context, canvas);
+	}
 	
-	let image = loadImage('../images/running-cat.png', (image) => {
-		startGame(image, playerContext, canvas);
-	});
+	loadImage(context, canvas) {
+		loadImage('../images/running-cat.png', (image) => {
+			startGame(image, context, canvas);
+		})
+	}
 
 }
+
+export default Player;

@@ -4,7 +4,7 @@
  * Initialize game canvas
  */
 
-import player from './elements/player.js';
+import Player from './elements/player.js';
 import background from './elements/background.js'
 
 let canvas = document.createElement('canvas');
@@ -21,5 +21,5 @@ let canvasContext = canvas.getContext('2d');
  * Call game elements
  */
 
-player(canvasContext, canvas);
+new Player(canvasContext, canvas);
 background(canvasContext, canvas);
