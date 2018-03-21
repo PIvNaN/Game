@@ -17,9 +17,6 @@ class Player {
 		
 		let x = 0;
 		let y = 0;
-
-		let lastX;
-		let lastY;
 		
 		let speedX = 4;
 
@@ -47,7 +44,6 @@ class Player {
 		})
 	}
 	update(image) {
-		console.log('Is Update START?', this.canvas, this.loopTicksPerFrame, this.lastX);		
 
 		if (this.loopTicksCount >= this.loopTicksPerFrame) {
 
@@ -60,7 +56,7 @@ class Player {
 		}
 
 		this.lastX = this.x;
-		this.lastY = this.y;
+		this.lastY = window.innerHeight - (image.height * 2.2);
 
 		this.x += this.speedX;
 
@@ -97,8 +93,8 @@ class Player {
 			0,
 			image.width / this.framesCount,
 			image.height / 2,
-			this.x,
-			this.y,
+			70,
+			window.innerHeight - (image.height * 2.2),
 			image.width / this.framesCount,
 			image.height / 2
 		);
