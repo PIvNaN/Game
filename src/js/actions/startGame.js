@@ -3,10 +3,12 @@
 let loopTicksCount = 0;
 
 import Player from "../elements/player.js";
+import Background from "../elements/background.js";
 
 export default function startGame(image, context, canvas) {
-	let player = new Player(context, canvas);
-	// console.log(image.width)
+	const player = new Player(context, canvas);
+	const bg = new Background(content, canvas);
+
 	loop();
 
 	function loop() {

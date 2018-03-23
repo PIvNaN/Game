@@ -5,7 +5,7 @@
  */
 
 import Player from './elements/player.js';
-import background from './elements/background.js'
+import Background from './elements/background.js'
 
 let canvas = document.createElement('canvas');
 canvas.classList.add('canvas');
@@ -22,4 +22,4 @@ let canvasContext = canvas.getContext('2d');
  */
 
 new Player(canvasContext, canvas);
-background(canvasContext, canvas);
+new Background(canvasContext, canvas);

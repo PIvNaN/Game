@@ -14,7 +14,7 @@ export default function background(bgContext, canvas) {
 			0,
 			0,
 			image.width,
-			image.height * 3,
+			image.height * 2.9,
 			0,
 			0,
 			image.width,
