@@ -13,12 +13,12 @@ class Player {
 		let framesCount = 4;
 
 		let loopTicksCount = 0;
-		let loopTicksPerFrame = 7;
+		let loopTicksPerFrame = 5;
 		
 		let x = 0;
 		let y = 0;
 		
-		let speedX = 4;
+		let speedX = 3;
 
 		this.frameIndex = frameIndex;
 		this.framesCount = framesCount;
@@ -40,28 +40,28 @@ class Player {
 	
 	loadImage(context, canvas) {
 		loadImage('../images/running-cat.png', (image) => {
-			// startGame(image, context, canvas);
+			startGame(image, context, canvas);
 
-			for (let i = 0; i < 300; i++) {
-				console.warn('THE LOOP TICK START');
-				this.update(image);
-				this.clear(image);
-				this.render(image);
-			}
+			// for (let i = 0; i < 600; i++) {
+			// 	console.warn('THE LOOP TICK START');
+			// 	this.update(image);
+			// 	this.clear(image);
+			// 	this.render(image);
+			// }
 		})
 	}
 	update(image) {
-		console.log('Update START?');
+		console.log('# Update START');
 
 		console.log('loopTicksCount START', this.loopTicksCount)
 		if (this.loopTicksCount >= this.loopTicksPerFrame) {
 
 			this.loopTicksCount = 0;
 			console.log('loopTicksCount INNER', this.loopTicksCount)
-			
-			this.frameIndex += 1;
-			console.log('frameIndex INNER', this.frameIndex)
 
+			this.frameIndex += 1;
+			console.log('frameIndex INNER', this.frameIndex)		
+			
 			if (this.frameIndex >= this.framesCount) {
 				this.frameIndex = 0;
 			}
@@ -73,7 +73,10 @@ class Player {
 		this.lastX = this.x;
 		this.lastY = window.innerHeight - (image.height * 2.2);
 
+		console.log('update lastX', this.lastX)
 		this.x += this.speedX;
+		console.log('x', this.x)
+		
 
 		if(this.x >= (this.canvas.width - (image.width / this.framesCount))) {
 			this.speedX = -this.speedX;
@@ -83,12 +86,13 @@ class Player {
 			this.speedX = -this.speedX;
 		}
 
-		console.log('Update END?');
+		console.log('# Update END');
 	}
 
 	clear(image) {
-		console.log('Clear START?');		
-		
+		console.log('# Clear START');
+
+		console.log('clear lastX', this.lastX)
 		this.context.clearRect(
 			this.lastX,
 			this.lastY,
@@ -96,11 +100,11 @@ class Player {
 			image.height / 2
 		);
 
-		console.log('Clear END?');
+		console.log('# Clear END');
 	}
 
 	render(image) {
-		console.log('Render START?');		
+		console.log('# Render START');		
 
 		this.context.drawImage(
 			image,
@@ -114,7 +118,7 @@ class Player {
 			image.height / 2
 		);
 
-		console.log('Render END?');
+		console.log('# Render END');
 	}
 
 }

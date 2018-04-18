@@ -5,19 +5,21 @@ import Background from "../elements/background.js";
 
 export default function startGame(image, context, canvas) {
 	const player = new Player(context, canvas);
-	// const bg = new Background(content, canvas);
-
-	loop();
+	// const bg = new Background(content, canvas);	
 
 	function loop() {
-		requestAnimationFrame(loop);
+		console.warn('THE LOOP TICK START');
 
 		_update();
 
 		_clear();
 
 		_render();
+
+		requestAnimationFrame(loop);
 	}
+
+	loop();
 
 	function _update() {
 		player.update(image)
