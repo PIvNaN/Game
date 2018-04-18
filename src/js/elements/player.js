@@ -40,20 +40,35 @@ class Player {
 	
 	loadImage(context, canvas) {
 		loadImage('../images/running-cat.png', (image) => {
-			startGame(image, context, canvas);
+			// startGame(image, context, canvas);
+
+			for (let i = 0; i < 300; i++) {
+				console.warn('THE LOOP TICK START');
+				this.update(image);
+				this.clear(image);
+				this.render(image);
+			}
 		})
 	}
 	update(image) {
+		console.log('Update START?');
 
+		console.log('loopTicksCount START', this.loopTicksCount)
 		if (this.loopTicksCount >= this.loopTicksPerFrame) {
 
 			this.loopTicksCount = 0;
+			console.log('loopTicksCount INNER', this.loopTicksCount)
+			
 			this.frameIndex += 1;
+			console.log('frameIndex INNER', this.frameIndex)
 
 			if (this.frameIndex >= this.framesCount) {
 				this.frameIndex = 0;
 			}
 		}
+
+		this.loopTicksCount += 1;
+		console.log('loopTicksCount END', this.loopTicksCount)
 
 		this.lastX = this.x;
 		this.lastY = window.innerHeight - (image.height * 2.2);
@@ -68,11 +83,11 @@ class Player {
 			this.speedX = -this.speedX;
 		}
 
-		console.log('Is Update DONE?');
+		console.log('Update END?');
 	}
 
 	clear(image) {
-		console.log('Is Clear START?');		
+		console.log('Clear START?');		
 		
 		this.context.clearRect(
 			this.lastX,
@@ -81,11 +96,11 @@ class Player {
 			image.height / 2
 		);
 
-		console.log('Is Clear DONE?');
+		console.log('Clear END?');
 	}
 
 	render(image) {
-		console.log('Is Render START?');		
+		console.log('Render START?');		
 
 		this.context.drawImage(
 			image,
@@ -99,7 +114,7 @@ class Player {
 			image.height / 2
 		);
 
-		console.log('Is Render DONE?');
+		console.log('Render END?');
 	}
 
 }

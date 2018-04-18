@@ -22,4 +22,4 @@ let canvasContext = canvas.getContext('2d');
  */
 
 new Player(canvasContext, canvas);
-new Background(canvasContext, canvas);
+// new Background(canvasContext, canvas);
